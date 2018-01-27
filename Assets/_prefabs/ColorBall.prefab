@@ -114,7 +114,10 @@ MonoBehaviour:
   ballMeshrenderer: {fileID: 23013757446803724}
   nextWaypoint: {fileID: 0}
   nextCenterPoint: {fileID: 0}
-  speed: 5
+  startSpeed: 25
+  endSpeed: 6
+  speedDecreaseRate: 90
+  currentSpeed: 5
   type: 0
   ballCollider: {fileID: 135386747691370746}
 --- !u!135 &135386747691370746

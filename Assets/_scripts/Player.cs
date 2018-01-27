@@ -16,7 +16,8 @@ public class Player : MonoBehaviour {
     [Space(5)]
     [Header("Waypoint")]
     public Waypoint startWaypoint = null;
-    
+
+    public MeshRenderer playerMeshRenderer;
 
     void Awake()
     {
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour {
     void init()
     {
         //keep and do something
+        playerMeshRenderer.material.color = ballColor;
     }
 
     // Update is called once per frame

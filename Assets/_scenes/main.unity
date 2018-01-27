@@ -345,9 +345,19 @@ Prefab:
       value: 
       objectReference: {fileID: 1043024633187620, guid: 5038f048f6b966e45b00d2cbd2908e56,
         type: 2}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: playerMeshRenderer
+      value: 
+      objectReference: {fileID: 523077649}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93acbcc86488e424ebcea0efcf27c3bf, type: 2}
   m_IsPrefabParent: 0
+--- !u!23 &523077649 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 23857994904887436, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+    type: 2}
+  m_PrefabInternal: {fileID: 272842619}
 --- !u!1001 &709059732
 Prefab:
   m_ObjectHideFlags: 0
@@ -410,6 +420,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 709059732}
   m_Script: {fileID: 11500000, guid: 7075679983f6ed94385c7bcf6222aa73, type: 3}
+--- !u!23 &725248417 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 23857994904887436, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+    type: 2}
+  m_PrefabInternal: {fileID: 2063958049}
 --- !u!1001 &761264126
 Prefab:
   m_ObjectHideFlags: 0
@@ -721,6 +736,11 @@ Prefab:
       propertyPath: changeDirKey
       value: 97
       objectReference: {fileID: 0}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: playerMeshRenderer
+      value: 
+      objectReference: {fileID: 1882352310}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93acbcc86488e424ebcea0efcf27c3bf, type: 2}
   m_IsPrefabParent: 0
@@ -786,6 +806,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1474492333}
   m_Script: {fileID: 11500000, guid: 7075679983f6ed94385c7bcf6222aa73, type: 3}
+--- !u!23 &1882352310 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 23857994904887436, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1379552138}
 --- !u!1001 &2020707427
 Prefab:
   m_ObjectHideFlags: 0
@@ -927,6 +952,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1043024633187620, guid: 5038f048f6b966e45b00d2cbd2908e56,
         type: 2}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: playerMeshRenderer
+      value: 
+      objectReference: {fileID: 725248417}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93acbcc86488e424ebcea0efcf27c3bf, type: 2}
   m_IsPrefabParent: 0

@@ -7,7 +7,10 @@ public class ColorBall : MonoBehaviour {
     public MeshRenderer ballMeshrenderer = null;
     public Waypoint nextWaypoint;
     public CenterPoint nextCenterPoint;
-    public float speed = 5;
+    public float startSpeed = 10;
+    public float endSpeed = 5;
+    public float speedDecreaseRate = 2;
+    public float currentSpeed = 5;
     public GeneralTable.Type type;
     public Collider ballCollider;
     private Color _ballcolor = Color.white;
@@ -30,17 +33,30 @@ public class ColorBall : MonoBehaviour {
         ballMeshrenderer.material.color = color;
     }
 
+    public void Start()
+    {
+        currentSpeed = startSpeed;
+    }
 
     void Update()
     {
-        if(nextWaypoint)
+        if(currentSpeed > endSpeed)
+        {
+            currentSpeed -= speedDecreaseRate * Time.deltaTime;
+            if(currentSpeed < endSpeed)
+            {
+                currentSpeed = endSpeed;
+            }
+        }
+
+        if (nextWaypoint)
         {
             tempPos = this.transform.position;
             tempNextPos = nextWaypoint.transform.position;
             tempDirection = tempNextPos - tempPos;
             tempDirection.Normalize();
             // speed
-            tempDirection *= speed;
+            tempDirection *= currentSpeed;
             this.transform.position = new Vector3(tempPos.x + (tempDirection.x * Time.deltaTime), 0, tempPos.z + (tempDirection.z * Time.deltaTime));
             tempResultPos = this.transform.position;
 
@@ -65,7 +81,7 @@ public class ColorBall : MonoBehaviour {
             tempDirection = tempNextPos - tempPos;
             tempDirection.Normalize();
             // speed
-            tempDirection *= speed;
+            tempDirection *= currentSpeed;
             this.transform.position = new Vector3(tempPos.x + (tempDirection.x * Time.deltaTime), 0, tempPos.z + (tempDirection.z * Time.deltaTime));
             tempResultPos = this.transform.position;
 

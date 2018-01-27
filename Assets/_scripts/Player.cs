@@ -38,7 +38,7 @@ public class Player : MonoBehaviour {
 
         if (Input.GetKeyDown(changeDirKey))
         {
-            Debug.Log("change waypoint direction");
+            startWaypoint.ChangeNextWaypoint();
         }
     }
 

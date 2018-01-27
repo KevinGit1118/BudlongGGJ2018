@@ -115,6 +115,8 @@ MonoBehaviour:
   nextWaypoint: {fileID: 0}
   nextCenterPoint: {fileID: 0}
   speed: 5
+  type: 0
+  ballCollider: {fileID: 135386747691370746}
 --- !u!135 &135386747691370746
 SphereCollider:
   m_ObjectHideFlags: 1

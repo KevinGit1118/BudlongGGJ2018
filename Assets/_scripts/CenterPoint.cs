@@ -41,6 +41,10 @@ public class CenterPoint : MonoBehaviour
             centerPointMeshRenderer.material.color = GeneralTable.GetColor(targetTypeQueue.Peek());
             result = true;
         }
+        else
+        {
+            GamePlayManager.OnGameOver();
+        }
         return result;
     }
 }

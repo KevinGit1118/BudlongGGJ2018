@@ -32,6 +32,9 @@ public class Player : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+
+        if (GamePlayManager.curGameState != GamePlayManager.GameState.InGame)
+            return;
         //catch input information
         if (Input.GetKeyDown(fireKey))
         {

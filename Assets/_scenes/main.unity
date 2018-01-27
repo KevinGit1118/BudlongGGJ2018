@@ -549,7 +549,7 @@ Prefab:
     - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
         type: 2}
       propertyPath: type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
         type: 2}
@@ -1595,6 +1595,11 @@ Prefab:
       propertyPath: colorLine
       value: 
       objectReference: {fileID: 324343056}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93acbcc86488e424ebcea0efcf27c3bf, type: 2}
   m_IsPrefabParent: 0

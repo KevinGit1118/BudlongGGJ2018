@@ -13,6 +13,10 @@ public class Player : MonoBehaviour {
     public float ballSpeed = 1;
     public GameObject colorBallRef = null;
 
+    public float R = 255;
+    public float G = 0;
+    public float B = 0;
+
     [Space(5)]
     [Header("Waypoint")]
     public Waypoint startWaypoint = null;
@@ -27,6 +31,7 @@ public class Player : MonoBehaviour {
     void init()
     {
         //keep and do something
+        ballColor = new Color(R, G, B);
         playerMeshRenderer.material.color = ballColor;
     }
 

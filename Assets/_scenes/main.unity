@@ -350,6 +350,16 @@ Prefab:
       propertyPath: playerMeshRenderer
       value: 
       objectReference: {fileID: 523077649}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: R
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: B
+      value: 255
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93acbcc86488e424ebcea0efcf27c3bf, type: 2}
   m_IsPrefabParent: 0
@@ -756,6 +766,16 @@ Prefab:
       propertyPath: playerMeshRenderer
       value: 
       objectReference: {fileID: 1882352310}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: ballColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: ballColor.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93acbcc86488e424ebcea0efcf27c3bf, type: 2}
   m_IsPrefabParent: 0
@@ -972,6 +992,16 @@ Prefab:
       propertyPath: playerMeshRenderer
       value: 
       objectReference: {fileID: 725248417}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: R
+      value: 255
+      objectReference: {fileID: 0}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: G
+      value: 128
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93acbcc86488e424ebcea0efcf27c3bf, type: 2}
   m_IsPrefabParent: 0

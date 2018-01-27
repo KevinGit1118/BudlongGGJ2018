@@ -59,7 +59,7 @@ public class GeneralTable
                 resultColor = Color.green;
                 break;
             case Type.Orange:
-                resultColor = new Color(255, 128, 0);
+                resultColor = new Color(255, 165, 0);
                 break;
             default:
                 break;

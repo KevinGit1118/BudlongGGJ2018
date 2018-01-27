@@ -80,4 +80,6 @@ public class ColorBall : MonoBehaviour {
             Debug.LogError("#### No next target, should be destroyed!");
         }
     }
+
+
 }

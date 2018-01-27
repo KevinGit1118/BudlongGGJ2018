@@ -32,11 +32,13 @@ public class CenterPoint : MonoBehaviour
     public bool match(GeneralTable.Type typeValue)
     {
         bool result = false;
+        Debug.Log("@@ " + typeValue + " @@ " + targetTypeQueue.Peek() + " @@");
         if(typeValue.Equals(targetTypeQueue.Peek()))
         {
             currentPoint++;
             targetTypeQueue.Dequeue();
             targetTypeQueue.Enqueue(GeneralTable.GetRandomType());
+            centerPointMeshRenderer.material.color = GeneralTable.GetColor(targetTypeQueue.Peek());
             result = true;
         }
         return result;

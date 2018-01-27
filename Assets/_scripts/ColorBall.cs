@@ -28,6 +28,7 @@ public class ColorBall : MonoBehaviour {
         ballMeshrenderer.material.color = color;
     }
 
+
     void Update()
     {
         if(nextWaypoint)

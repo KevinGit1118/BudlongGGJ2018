@@ -9,13 +9,9 @@ public class Player : MonoBehaviour {
 
     [Space(5)]
     [Header("Color Ball")]
-    public Color ballColor = Color.red;
+    public GeneralTable.Type type;
     public float ballSpeed = 1;
     public GameObject colorBallRef = null;
-
-    public float R = 255;
-    public float G = 0;
-    public float B = 0;
 
     [Space(5)]
     [Header("Waypoint")]
@@ -31,8 +27,7 @@ public class Player : MonoBehaviour {
     void init()
     {
         //keep and do something
-        ballColor = new Color(R, G, B);
-        playerMeshRenderer.material.color = ballColor;
+        playerMeshRenderer.material.color = GeneralTable.GetColor(type);
     }
 
     // Update is called once per frame
@@ -53,7 +48,8 @@ public class Player : MonoBehaviour {
     {
         GameObject colorballGO = Instantiate(colorBallRef);
         colorballGO.transform.position = this.transform.position;
-        colorballGO.GetComponent<ColorBall>().BallColor = ballColor;
+        colorballGO.GetComponent<ColorBall>().type = type;
+        colorballGO.GetComponent<ColorBall>().BallColor = GeneralTable.GetColor(type);
         colorballGO.GetComponent<ColorBall>().nextWaypoint = startWaypoint;
     }
 

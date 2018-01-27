@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CenterPoint : MonoBehaviour
 {
-    const int colorCountMax = 10;
+    const int countMax = 10;
 
-    Queue<Color> targetColorQueue;
+    Queue<GeneralTable.Type> targetTypeQueue;
 
     public int currentPoint = 0;
 
@@ -14,29 +14,29 @@ public class CenterPoint : MonoBehaviour
 
     void Awake()
     {
-        targetColorQueue = new Queue<Color>();
+        targetTypeQueue = new Queue<GeneralTable.Type>();
     }
 
     // Use this for initialization
     void Start ()
     {
-		for(int i = 0; i < colorCountMax; ++i)
+		for(int i = 0; i < countMax; ++i)
         {
-            targetColorQueue.Enqueue(ColorTable.GetRandomColor());
+            targetTypeQueue.Enqueue(GeneralTable.GetRandomType());
         }
 
-        centerPointMeshRenderer.material.color = targetColorQueue.Peek();
+        centerPointMeshRenderer.material.color = GeneralTable.GetColor(targetTypeQueue.Peek());
     }
 
     // if Color match queue color, add one point, and create another color into queue.
-    public bool match(Color color)
+    public bool match(GeneralTable.Type typeValue)
     {
         bool result = false;
-        if(color.Equals(targetColorQueue.Peek()))
+        if(typeValue.Equals(targetTypeQueue.Peek()))
         {
             currentPoint++;
-            targetColorQueue.Dequeue();
-            targetColorQueue.Enqueue(ColorTable.GetRandomColor());
+            targetTypeQueue.Dequeue();
+            targetTypeQueue.Enqueue(GeneralTable.GetRandomType());
             result = true;
         }
         return result;

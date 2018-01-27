@@ -8,6 +8,7 @@ public class ColorBall : MonoBehaviour {
     public Waypoint nextWaypoint;
     public CenterPoint nextCenterPoint;
     public float speed = 5;
+    public GeneralTable.Type type;
     private Color _ballcolor = Color.white;
 
     private Vector3 tempPos = Vector3.zero;
@@ -70,7 +71,7 @@ public class ColorBall : MonoBehaviour {
             if (((tempPos.x - tempNextPos.x) * (tempResultPos.x - tempNextPos.x)) <= 0 && ((tempPos.z - tempNextPos.z) * (tempResultPos.z - tempNextPos.z)) <= 0)
             {
                 this.transform.position = tempNextPos;
-                nextCenterPoint.match(_ballcolor);
+                nextCenterPoint.match(type);
                 Destroy(this.gameObject);
             }
         }

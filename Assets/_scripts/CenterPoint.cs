@@ -22,11 +22,6 @@ public class CenterPoint : MonoBehaviour
         {
             targetColorQueue.Enqueue(ColorTable.GetRandomColor());
         }
-
-        for (int i = 0; i < colorCountMax; ++i)
-        {
-            Debug.Log("#### " + targetColorQueue.Dequeue().ToString());
-        }
     }
 
     // if Color match queue color, add one point, and create another color into queue.

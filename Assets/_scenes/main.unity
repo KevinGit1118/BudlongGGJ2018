@@ -464,6 +464,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 135143896904694416, guid: 9f69a429132879641826473a3490d8a2,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114277769355557208, guid: 9f69a429132879641826473a3490d8a2,
+        type: 2}
+      propertyPath: centerPointMeshRenderer
+      value: 
+      objectReference: {fileID: 1175204108}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f69a429132879641826473a3490d8a2, type: 2}
   m_IsPrefabParent: 0
@@ -538,6 +548,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!23 &1175204108 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 23766269213194010, guid: 9f69a429132879641826473a3490d8a2,
+    type: 2}
+  m_PrefabInternal: {fileID: 761264126}
 --- !u!1001 &1185710065
 Prefab:
   m_ObjectHideFlags: 0

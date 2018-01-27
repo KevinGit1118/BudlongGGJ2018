@@ -10,6 +10,8 @@ public class CenterPoint : MonoBehaviour
 
     public int currentPoint = 0;
 
+    public MeshRenderer centerPointMeshRenderer;
+
     void Awake()
     {
         targetColorQueue = new Queue<Color>();
@@ -22,6 +24,8 @@ public class CenterPoint : MonoBehaviour
         {
             targetColorQueue.Enqueue(ColorTable.GetRandomColor());
         }
+
+        centerPointMeshRenderer.material.color = targetColorQueue.Peek();
     }
 
     // if Color match queue color, add one point, and create another color into queue.

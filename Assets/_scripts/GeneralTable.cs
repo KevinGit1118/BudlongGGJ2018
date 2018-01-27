@@ -53,13 +53,13 @@ public class GeneralTable
                 resultColor = Color.yellow;
                 break;
             case Type.Purple:
-                resultColor = new Color(255, 0, 255);
+                resultColor = new Color(1, 0, 1);
                 break;
             case Type.Green:
                 resultColor = Color.green;
                 break;
             case Type.Orange:
-                resultColor = new Color(255, 165, 0);
+                resultColor = new Color(1, 0.6f, 0);
                 break;
             default:
                 break;

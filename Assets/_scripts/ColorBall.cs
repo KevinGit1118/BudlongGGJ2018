@@ -9,6 +9,7 @@ public class ColorBall : MonoBehaviour {
     public CenterPoint nextCenterPoint;
     public float speed = 5;
     public GeneralTable.Type type;
+    public Collider ballCollider;
     private Color _ballcolor = Color.white;
 
     private Vector3 tempPos = Vector3.zero;
@@ -68,10 +69,10 @@ public class ColorBall : MonoBehaviour {
             this.transform.position = new Vector3(tempPos.x + (tempDirection.x * Time.deltaTime), 0, tempPos.z + (tempDirection.z * Time.deltaTime));
             tempResultPos = this.transform.position;
 
+            // to the center, just destroy
             if (((tempPos.x - tempNextPos.x) * (tempResultPos.x - tempNextPos.x)) <= 0 && ((tempPos.z - tempNextPos.z) * (tempResultPos.z - tempNextPos.z)) <= 0)
             {
                 this.transform.position = tempNextPos;
-                nextCenterPoint.match(type);
                 Destroy(this.gameObject);
             }
         }
@@ -98,6 +99,12 @@ public class ColorBall : MonoBehaviour {
             {
                 Destroy(this.gameObject);
             }
+        }
+        CenterPoint tempCenterPoint = other.gameObject.GetComponent<CenterPoint>();
+        if(tempCenterPoint)
+        {
+            nextCenterPoint.match(type);
+            ballCollider.enabled = false;
         }
     }
 }

@@ -1250,7 +1250,7 @@ Prefab:
     - target: {fileID: 114594038940467822, guid: fcff82e8056f8164498403f80fba2dad,
         type: 2}
       propertyPath: timeTable.Array.data[0]
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fcff82e8056f8164498403f80fba2dad, type: 2}

@@ -51,6 +51,7 @@ public class Player : MonoBehaviour {
         if (Input.GetKeyDown(fireKey))
         {
             isOn = !isOn;
+            playerMeshRenderer.material.color = (isOn)? GeneralTable.GetColor(type) : GeneralTable.GetColor(GeneralTable.Type.White);           
         }
 
         if (Input.GetKeyDown(changeDirKey))
@@ -78,6 +79,8 @@ public class Player : MonoBehaviour {
     void OnGameOver()
     {
         isOn = true;
+        playerMeshRenderer.material.color = GeneralTable.GetColor(type);
+
     }
 
     public void DeType()

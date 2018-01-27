@@ -34,7 +34,7 @@ public class Player : MonoBehaviour {
 
     private void Start()
     {
-        EnColor();
+        EnType();
     }
 
     // Update is called once per frame
@@ -50,9 +50,9 @@ public class Player : MonoBehaviour {
 
         if (Input.GetKeyDown(changeDirKey))
         {
-            DeColor();
+            DeType();
             startWaypoint.ChangeNextWaypoint();
-            EnColor();
+            EnType();
         }
     }
 
@@ -65,24 +65,25 @@ public class Player : MonoBehaviour {
         colorballGO.GetComponent<ColorBall>().nextWaypoint = startWaypoint;
     }
 
-    public void DeColor()
+    public void DeType()
     {
-        colorLine.ResetColor();
+        colorLine.RemoveType(type);
         Waypoint current = startWaypoint;
         while(current)
         {
-            current.DeColor();
+            current.DeType(type);
             current = current.GetNextWaypoint();
         }
     }
 
-    public void EnColor()
+    public void EnType()
     {
-        colorLine.SetColor(GeneralTable.GetColor(type));
+        Debug.Log("## Player: " + type.ToString());
+        colorLine.AddType(type);
         Waypoint current = startWaypoint;
         while (current)
         {
-            current.EnColor(GeneralTable.GetColor(type));
+            current.EnType(type);
             current = current.GetNextWaypoint();
         }
     }

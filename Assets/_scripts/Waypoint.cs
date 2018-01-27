@@ -49,27 +49,27 @@ public class Waypoint : MonoBehaviour {
         return centerPoint;
     }
 
-    public void DeColor()
+    public void EnType(GeneralTable.Type type)
     {
         if (colorLine)
         {
-            colorLine.ResetColor();
+            colorLine.AddType(type);
         }
         if (colorLines.Length > 0)
         {
-            colorLines[nextWaypointIndex].ResetColor();
+            colorLines[nextWaypointIndex].AddType(type);
         }
     }
 
-    public void EnColor(Color color)
+    public void DeType(GeneralTable.Type type)
     {
         if(colorLine)
         {
-            colorLine.SetColor(color);
+            colorLine.RemoveType(type);
         }
         if(colorLines.Length > 0)
         {
-            colorLines[nextWaypointIndex].SetColor(color);
+            colorLines[nextWaypointIndex].RemoveType(type);
         }
     }
 }

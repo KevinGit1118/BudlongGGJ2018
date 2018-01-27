@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1043024633187620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.9482245, y: -1.8760657, z: 2.5761542}
+  m_LocalPosition: {x: 202.29921, y: 224.38545, z: 176.9103}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,6 +115,8 @@ MonoBehaviour:
   nextWaypoint: {fileID: 0}
   nextCenterPoint: {fileID: 0}
   speed: 5
+  type: 0
+  ballCollider: {fileID: 135386747691370746}
 --- !u!135 &135386747691370746
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -12,13 +12,15 @@ public class UIManager : MonoBehaviour {
     {
         GamePlayManager.OnGameStart += OnGameStart;
         GamePlayManager.OnGameOver += OnGameOver;
-
+        GamePlayManager.OnBackToMainMenu += OnBackToMainMenu;
     }
 
     void OnDestroy()
     {
         GamePlayManager.OnGameStart -= OnGameStart;
         GamePlayManager.OnGameOver -= OnGameOver;
+        GamePlayManager.OnBackToMainMenu -= OnBackToMainMenu;
+
     }
 
     // Use this for initialization
@@ -39,11 +41,21 @@ public class UIManager : MonoBehaviour {
     void OnGameOver()
     {
         GameOverPanel.SetActive(true);
+    }
 
+    void OnBackToMainMenu()
+    {
+        GameOverPanel.SetActive(false);
+        MainMenuPanel.SetActive(true);
     }
 
     public void BtnStart()
     {
         GamePlayManager.OnGameStart();
+    }
+
+    public void BtnToMainMenu()
+    {
+        GamePlayManager.OnBackToMainMenu();
     }
 }

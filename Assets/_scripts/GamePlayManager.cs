@@ -28,8 +28,14 @@ public class GamePlayManager : MonoBehaviour {
 
     public static Action OnGameStart = delegate { };
     public static Action OnGameOver = delegate { };
+    public static Action OnBackToMainMenu = delegate { };
 
-    public static GameState curGameState = GameState.MainMenu;
+    private static GameState curGameState = GameState.MainMenu;
+
+    public static GameState CurGameState
+    {
+        get { return curGameState; }
+    }
 
 
 
@@ -37,11 +43,14 @@ public class GamePlayManager : MonoBehaviour {
     {
         OnGameStart += StartGame;
         OnGameOver += EndGame;
+        OnBackToMainMenu += BackToMainMenu;
     }
     void OnDestroy()
     {
         OnGameStart -= StartGame;
         OnGameOver -= EndGame;
+        OnBackToMainMenu -= BackToMainMenu;
+
     }
 
     void Start()
@@ -57,6 +66,11 @@ public class GamePlayManager : MonoBehaviour {
     void EndGame()
     {
         curGameState = GameState.GameOver;
+    }
+
+    void BackToMainMenu()
+    {
+        curGameState = GameState.MainMenu;
     }
 
 

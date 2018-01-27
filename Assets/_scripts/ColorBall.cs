@@ -70,7 +70,7 @@ public class ColorBall : MonoBehaviour {
             {
                 this.transform.position = tempNextPos;
                 nextCenterPoint.match(_ballcolor);
-                Destroy(this);
+                Destroy(this.gameObject);
             }
         }
         else

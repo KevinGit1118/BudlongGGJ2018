@@ -58,7 +58,7 @@ public class Player : MonoBehaviour {
                 DeType();
         }
 
-        if (Input.GetKeyDown(changeDirKey))
+        if (Input.GetKeyDown(changeDirKey) && isOn)
         {
             DeType();
             startWaypoint.ChangeNextWaypoint();

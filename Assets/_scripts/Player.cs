@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
     public GeneralTable.Type type;
     public float ballSpeed = 1;
     public GameObject colorBallRef = null;
+    
 
     [Space(5)]
     [Header("Waypoint")]
@@ -21,6 +22,9 @@ public class Player : MonoBehaviour {
 
     public ColorLine colorLine;
 
+    [HideInInspector]
+    public bool isOn = true;
+
     void Awake()
     {
         init();
@@ -28,6 +32,7 @@ public class Player : MonoBehaviour {
 
     void init()
     {
+        GamePlayManager.OnGameOver += OnGameOver;
         //keep and do something
         playerMeshRenderer.material.color = GeneralTable.GetColor(type);
     }
@@ -45,10 +50,15 @@ public class Player : MonoBehaviour {
         //catch input information
         if (Input.GetKeyDown(fireKey))
         {
-            FireColorBall();
+            isOn = !isOn;
+            playerMeshRenderer.material.color = (isOn)? GeneralTable.GetColor(type) : GeneralTable.GetColor(GeneralTable.Type.White);
+            if (isOn)
+                EnType();
+            else
+                DeType();
         }
 
-        if (Input.GetKeyDown(changeDirKey))
+        if (Input.GetKeyDown(changeDirKey) && isOn)
         {
             DeType();
             startWaypoint.ChangeNextWaypoint();
@@ -56,13 +66,26 @@ public class Player : MonoBehaviour {
         }
     }
 
-    void FireColorBall()
+    void OnDestroy()
+    {
+        GamePlayManager.OnGameOver -= OnGameOver;
+
+    }
+
+    public void FireColorBall()
     {
         GameObject colorballGO = Instantiate(colorBallRef);
         colorballGO.transform.position = this.transform.position;
         colorballGO.GetComponent<ColorBall>().type = type;
         colorballGO.GetComponent<ColorBall>().BallColor = GeneralTable.GetColor(type);
         colorballGO.GetComponent<ColorBall>().nextWaypoint = startWaypoint;
+    }
+    void OnGameOver()
+    {
+        if(!isOn) EnType();
+        isOn = true;
+        playerMeshRenderer.material.color = GeneralTable.GetColor(type);
+
     }
 
     public void DeType()

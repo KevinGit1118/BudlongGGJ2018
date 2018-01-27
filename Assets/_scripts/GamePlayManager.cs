@@ -19,7 +19,7 @@ public class GamePlayManager : MonoBehaviour {
 
             if (_instance == null)
             {
-                _instance = new GamePlayManager();
+                _instance = FindObjectOfType<GamePlayManager>();
             }
 
             return _instance;
@@ -38,7 +38,13 @@ public class GamePlayManager : MonoBehaviour {
     }
 
 
+    public float timer = 0;
+    public List<float> timeTable = new List<float>();
+    private static int curStage = 0;
+    public static int CurStage { get { return curStage; } }
 
+    public Player[] players = new Player[3];
+    private bool EnableTimer = false;
     void Awake()
     {
         OnGameStart += StartGame;
@@ -56,21 +62,54 @@ public class GamePlayManager : MonoBehaviour {
     void Start()
     {
         curGameState = GameState.MainMenu;
+        EnableTimer = false;
+
     }
 
     void StartGame()
     {
-        curGameState = GameState.InGame;     
+        curGameState = GameState.InGame;
+        EnableTimer = true;
+        timer = 0;
     }
 
     void EndGame()
     {
         curGameState = GameState.GameOver;
+        EnableTimer = false;
+        timer = 0;
     }
 
     void BackToMainMenu()
     {
         curGameState = GameState.MainMenu;
+        EnableTimer = false;
+
+    }
+
+    void Update()
+    {
+        if (curGameState == GameState.InGame && EnableTimer)
+        {
+            timer += Time.deltaTime;
+            //time
+            if (timer > timeTable[curStage])
+            {
+                foreach (Player p in players)
+                {
+                    if(p.isOn)
+                        p.FireColorBall();
+                }
+                timer = 0;
+            }
+        }
+    }
+
+    public float GetRestTime()
+    {
+        if(timeTable.Count == 0)
+            return 0;
+        return timeTable[curStage] - timer;
     }
 
 

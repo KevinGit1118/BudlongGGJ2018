@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour {
     public Waypoint[] nextWaypoints;
+    public ColorLine[] colorLines;
     public CenterPoint centerPoint;
 
     public int nextWaypointIndex = 0;
+
+    public ColorLine colorLine;
 
     void Start()
     {
@@ -44,5 +47,29 @@ public class Waypoint : MonoBehaviour {
     public CenterPoint GetCenterPoint()
     {
         return centerPoint;
+    }
+
+    public void DeColor()
+    {
+        if (colorLine)
+        {
+            colorLine.ResetColor();
+        }
+        if (colorLines.Length > 0)
+        {
+            colorLines[nextWaypointIndex].ResetColor();
+        }
+    }
+
+    public void EnColor(Color color)
+    {
+        if(colorLine)
+        {
+            colorLine.SetColor(color);
+        }
+        if(colorLines.Length > 0)
+        {
+            colorLines[nextWaypointIndex].SetColor(color);
+        }
     }
 }

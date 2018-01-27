@@ -19,6 +19,8 @@ public class Player : MonoBehaviour {
 
     public MeshRenderer playerMeshRenderer;
 
+    public ColorLine colorLine;
+
     void Awake()
     {
         init();
@@ -28,6 +30,11 @@ public class Player : MonoBehaviour {
     {
         //keep and do something
         playerMeshRenderer.material.color = GeneralTable.GetColor(type);
+    }
+
+    private void Start()
+    {
+        EnColor();
     }
 
     // Update is called once per frame
@@ -43,7 +50,9 @@ public class Player : MonoBehaviour {
 
         if (Input.GetKeyDown(changeDirKey))
         {
+            DeColor();
             startWaypoint.ChangeNextWaypoint();
+            EnColor();
         }
     }
 
@@ -56,5 +65,25 @@ public class Player : MonoBehaviour {
         colorballGO.GetComponent<ColorBall>().nextWaypoint = startWaypoint;
     }
 
+    public void DeColor()
+    {
+        colorLine.ResetColor();
+        Waypoint current = startWaypoint;
+        while(current)
+        {
+            current.DeColor();
+            current = current.GetNextWaypoint();
+        }
+    }
 
+    public void EnColor()
+    {
+        colorLine.SetColor(GeneralTable.GetColor(type));
+        Waypoint current = startWaypoint;
+        while (current)
+        {
+            current.EnColor(GeneralTable.GetColor(type));
+            current = current.GetNextWaypoint();
+        }
+    }
 }

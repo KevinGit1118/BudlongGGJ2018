@@ -14,19 +14,19 @@ public class GeneralTable
         Orange = 5,
         TypeEnumMax = 6
     }
-    
+
     public static Type Combine(Type type1, Type type2)
     {
         Type result = type1;
-        if (type1 == Type.Red && type2 == Type.Blue)
+        if ((type1 == Type.Red && type2 == Type.Blue) || (type1 == Type.Blue && type2 == Type.Red))
         {
             result = Type.Purple;
         }
-        else if (type1 == Type.Blue && type2 == Type.Yellow)
+        else if ((type1 == Type.Blue && type2 == Type.Yellow) || (type1 == Type.Yellow && type2 == Type.Blue))
         {
             result = Type.Green;
         }
-        else if (type1 == Type.Yellow && type2 == Type.Red)
+        else if ((type1 == Type.Yellow && type2 == Type.Red) || (type1 == Type.Red && type2 == Type.Yellow))
         {
             result = Type.Orange;
         }

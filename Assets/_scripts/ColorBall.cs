@@ -81,5 +81,23 @@ public class ColorBall : MonoBehaviour {
         }
     }
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+        ColorBall tempColorBall = other.gameObject.GetComponent<ColorBall>();
+        if(tempColorBall)
+        {
+            Debug.Log("==== " + tempColorBall.type);
+            // Don't case equal for now lol
+            if((int)type > (int)tempColorBall.type)
+            {
+                type = GeneralTable.Combine(type, tempColorBall.type);
+                Debug.Log("---- new type " + type + ", " + GeneralTable.GetColor(type).ToString());
+                BallColor = GeneralTable.GetColor(type);
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+        }
+    }
 }

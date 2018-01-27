@@ -30,7 +30,14 @@ public class Waypoint : MonoBehaviour {
     // get next waypoint
     public Waypoint GetNextWaypoint()
     {
-        return nextWaypoints[nextWaypointIndex];
+        if(nextWaypoints.Length == 0)
+        {
+            return null;
+        }
+        else
+        {
+            return nextWaypoints[nextWaypointIndex];
+        }
     }
 
     // get center point

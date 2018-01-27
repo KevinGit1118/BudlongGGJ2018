@@ -47,6 +47,7 @@ public class Player : MonoBehaviour {
         GameObject colorballGO = Instantiate(colorBallRef);
         colorballGO.transform.position = this.transform.position;
         colorballGO.GetComponent<ColorBall>().BallColor = ballColor;
+        colorballGO.GetComponent<ColorBall>().nextWaypoint = startWaypoint;
     }
 
 

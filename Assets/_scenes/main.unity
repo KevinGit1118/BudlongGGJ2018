@@ -314,6 +314,37 @@ Prefab:
       propertyPath: startWaypoint
       value: 
       objectReference: {fileID: 255186395}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: fireKey
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: changeDirKey
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: ballColor.g
+      value: 0.21379304
+      objectReference: {fileID: 0}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: ballColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: ballColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: colorBallRef
+      value: 
+      objectReference: {fileID: 1043024633187620, guid: 5038f048f6b966e45b00d2cbd2908e56,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93acbcc86488e424ebcea0efcf27c3bf, type: 2}
   m_IsPrefabParent: 0
@@ -674,6 +705,22 @@ Prefab:
       propertyPath: startWaypoint
       value: 
       objectReference: {fileID: 1336542223}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: fireKey
+      value: 113
+      objectReference: {fileID: 0}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: colorBallRef
+      value: 
+      objectReference: {fileID: 1043024633187620, guid: 5038f048f6b966e45b00d2cbd2908e56,
+        type: 2}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: changeDirKey
+      value: 97
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93acbcc86488e424ebcea0efcf27c3bf, type: 2}
   m_IsPrefabParent: 0
@@ -859,6 +906,27 @@ Prefab:
       propertyPath: startWaypoint
       value: 
       objectReference: {fileID: 2020707428}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: fireKey
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: ballColor.r
+      value: 0.9862069
+      objectReference: {fileID: 0}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: ballColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114410486915568178, guid: 93acbcc86488e424ebcea0efcf27c3bf,
+        type: 2}
+      propertyPath: colorBallRef
+      value: 
+      objectReference: {fileID: 1043024633187620, guid: 5038f048f6b966e45b00d2cbd2908e56,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93acbcc86488e424ebcea0efcf27c3bf, type: 2}
   m_IsPrefabParent: 0

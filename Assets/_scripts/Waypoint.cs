@@ -16,8 +16,8 @@ public class Waypoint : MonoBehaviour {
 
     void Start()
     {
-        nextWaypointIndex = 0;    
-        if(nextWaypoints.Length == 0 && centerPoint == null)
+        nextWaypointIndex = 0;
+        if (nextWaypoints.Length == 0 && centerPoint == null)
         {
             Debug.LogError(this.name + " have no next target!");
         }

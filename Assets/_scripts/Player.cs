@@ -61,9 +61,7 @@ public class Player : MonoBehaviour {
 
         if (Input.GetKeyDown(changeDirKey) && isOn)
         {
-            DeType();
-            startWaypoint.ChangeNextWaypoint();
-            EnType();
+            ChangeWaypointColor();
         }
     }
 
@@ -90,10 +88,21 @@ public class Player : MonoBehaviour {
     }
     void OnGameOver()
     {
+        if(startWaypoint.nextWaypointIndex != 0)
+        {
+            ChangeWaypointColor();
+        }
+
         if(!isOn) EnType();
         isOn = true;
         playerMeshRenderer.material.color = GeneralTable.GetColor(type);
+    }
 
+    void ChangeWaypointColor()
+    {
+        DeType();
+        startWaypoint.ChangeNextWaypoint();
+        EnType();
     }
 
     public void DeType()

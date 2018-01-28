@@ -27,6 +27,7 @@ public class CenterPoint : MonoBehaviour
     void Start ()
     {
         Reset();
+        GamePlayManager.OnGameOver += Reset;
     }
 
     public void Reset()

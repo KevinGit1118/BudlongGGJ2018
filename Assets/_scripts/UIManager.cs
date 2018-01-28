@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour {
     public GameObject InGamePanel = null;
     public GameObject LeaderBoardPanel = null;
     public Text TimerText = null;
+    public Image TimerBar = null;
 
     public GameObject LeaderboardEntryRef = null;
     private List<GameObject> LeaderboardEntries = new List<GameObject>();
@@ -52,6 +53,7 @@ public class UIManager : MonoBehaviour {
         if (GamePlayManager.CurGameState == GamePlayManager.GameState.InGame)
         {
             TimerText.text = GamePlayManager.Instance.GetRestTime().ToString();
+            TimerBar.fillAmount = GamePlayManager.Instance.GetRestTime() / GamePlayManager.Instance.timeTable[GamePlayManager.CurStage];
         }
 
 

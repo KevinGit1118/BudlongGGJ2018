@@ -555,6 +555,48 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 255186394}
   m_Script: {fileID: 11500000, guid: 7075679983f6ed94385c7bcf6222aa73, type: 3}
+--- !u!1001 &260567776
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4611915381905636, guid: 8669b2c8628edfe48882f40c71c54ec3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611915381905636, guid: 8669b2c8628edfe48882f40c71c54ec3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611915381905636, guid: 8669b2c8628edfe48882f40c71c54ec3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611915381905636, guid: 8669b2c8628edfe48882f40c71c54ec3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611915381905636, guid: 8669b2c8628edfe48882f40c71c54ec3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611915381905636, guid: 8669b2c8628edfe48882f40c71c54ec3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611915381905636, guid: 8669b2c8628edfe48882f40c71c54ec3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611915381905636, guid: 8669b2c8628edfe48882f40c71c54ec3, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8669b2c8628edfe48882f40c71c54ec3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &276140366 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4216577355770062, guid: 1796b6d11d357ee47b0a7c5e69729a05,

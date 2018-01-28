@@ -8,14 +8,16 @@ public class AudioManager : MonoBehaviour {
     public AudioMixerSnapshot NormalSpeed;
     public AudioMixerSnapshot GameOver;
     public AudioMixerSnapshot SpeedUp;
+    public AudioSource explosion;
 
+    static AudioSource explosionSound;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         GamePlayManager.OnGameStart += OnGameStart;
         GamePlayManager.OnGameOver += OnGameOver;
         GamePlayManager.OnBackToMainMenu += OnBackToMainMenu;
-
+        explosionSound = explosion;
     }
 
     void OnGameStart()
@@ -31,6 +33,11 @@ public class AudioManager : MonoBehaviour {
     void OnBackToMainMenu()
     {
         NormalSpeed.TransitionTo(0.01f);
+    }
+
+    public static void PlayExplosion()
+    {
+        explosionSound.Play();
     }
 
 

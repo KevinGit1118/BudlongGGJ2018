@@ -57,7 +57,9 @@ public class UIManager : MonoBehaviour {
         }
 
 
-	}
+
+
+    }
 
     void OnGameStart()
     {
@@ -69,6 +71,8 @@ public class UIManager : MonoBehaviour {
     {
         GameOverPanel.SetActive(true);
         InGamePanel.SetActive(false);
+        userScroe.text = "Score  " + GamePlayManager.Instance.centerPoint.currentPoint;
+
     }
 
     void OnBackToMainMenu()
@@ -77,7 +81,8 @@ public class UIManager : MonoBehaviour {
         MainMenuPanel.SetActive(true);
         InGamePanel.SetActive(false);
         //update leaderboard player data here
-        PlayersData.Instance.UpdateLeaderBoard(userName.text, GamePlayManager.Instance.centerPoint.currentPoint);
+        int point = (string.IsNullOrEmpty(userName.text)) ? -1 : GamePlayManager.Instance.centerPoint.currentPoint;
+        PlayersData.Instance.UpdateLeaderBoard(userName.text, point);
         UpdateLeaderBoard();
     }
 
@@ -97,7 +102,7 @@ public class UIManager : MonoBehaviour {
         for (int i = 0; i < 10; ++i)
         {
             PlayerPrefs.SetString("name" + i, "");
-            PlayerPrefs.SetInt("score" + i,0);
+            PlayerPrefs.SetInt("score" + i,-1);
             PlayersData.LeaderLine temp = new PlayersData.LeaderLine();
             temp.name = "";
             temp.score = 0;
@@ -124,12 +129,12 @@ public class UIManager : MonoBehaviour {
         {
             string lName =  PlayersData.Instance.leaderBoard[i].name;
             int lScore = PlayersData.Instance.leaderBoard[i].score;
-            if (string.IsNullOrEmpty(lName) && lScore == 0)
+            if (string.IsNullOrEmpty(lName) && lScore == -1)
             {
                 LeaderboardEntries[i].GetComponentInChildren<Text>().text = "";
                 continue;
             }
-            LeaderboardEntries[i].GetComponentInChildren<Text>().text = lName + " : " + lScore;
+            LeaderboardEntries[i].GetComponentInChildren<Text>().text = lName + "  " + lScore;
 
         }
 

@@ -62,6 +62,10 @@ public class CenterPoint : MonoBehaviour
         this.transform.localScale = new Vector3(fixedScale, fixedScale, fixedScale);
     }
 
+    void PlayExplosionSound()
+    {
+        AudioManager.PlayExplosion();
+    }
     private void Update()
     {
         if(blackFlag)

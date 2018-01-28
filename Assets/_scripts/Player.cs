@@ -76,7 +76,7 @@ public class Player : MonoBehaviour {
         if(ps)
         {
             ps.Clear();
-            ps.startColor = GeneralTable.GetColor(type);
+            //ps.startColor = GeneralTable.GetColor(type);
             ps.Play();
         }
 

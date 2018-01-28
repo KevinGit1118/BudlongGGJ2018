@@ -6,6 +6,7 @@ public class PlayersData : MonoBehaviour {
     const int LEADER_BOARD_MAX = 10;
 
     public List<LeaderLine> leaderBoard;
+    public bool hasInit = false;
 
     [System.Serializable]
     public struct LeaderLine
@@ -39,6 +40,8 @@ public class PlayersData : MonoBehaviour {
             temp.score = PlayerPrefs.GetInt("score" + i);
             leaderBoard.Add(temp);
         }
+
+        hasInit = true;
     }
 
 

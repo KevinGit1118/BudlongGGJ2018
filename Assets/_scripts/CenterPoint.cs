@@ -118,6 +118,7 @@ public class CenterPoint : MonoBehaviour
             else
             {
                 currentPoint++;
+                GamePlayManager.Instance.NextStage();
                 GeneralTable.Type currentType = targetTypeQueue.Peek();
                 while(currentType == targetTypeQueue.Peek())
                 {

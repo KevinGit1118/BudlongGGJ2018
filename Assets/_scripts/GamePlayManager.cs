@@ -68,6 +68,7 @@ public class GamePlayManager : MonoBehaviour {
 
     void StartGame()
     {
+        curStage = 0;
         curGameState = GameState.InGame;
         EnableTimer = true;
         timer = 0;
@@ -127,5 +128,12 @@ public class GamePlayManager : MonoBehaviour {
         return Mathf.Max(timeTable[curStage] - timer, 0);
     }
 
-
+    public void NextStage()
+    {
+        curStage++;
+        if(curStage >= timeTable.Count)
+        {
+            curStage = timeTable.Count - 1;
+        }
+    }
 }

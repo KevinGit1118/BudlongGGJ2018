@@ -22,22 +22,29 @@ public class CenterPoint : MonoBehaviour
     public int currentColorBallNum = 0;
     public bool failFlag = false;
 
+    public float fixedScale;
+
     public Animator centerPointAnimator;
 
     void Awake()
     {
         targetTypeQueue = new Queue<GeneralTable.Type>();
+
+        fixedScale = this.transform.localScale.x;
     }
 
     // Use this for initialization
     void Start ()
     {
         Reset();
-        GamePlayManager.OnGameOver += Reset;
+        GamePlayManager.OnGameStart += Reset;
+        centerPointMeshRenderer.material.color = GeneralTable.GetColor(GeneralTable.Type.White);
     }
 
     public void Reset()
     {
+        this.transform.localScale = new Vector3(fixedScale, fixedScale, fixedScale);
+
         blackFlag = false;
         cumulativeTime = 0;
 
@@ -62,9 +69,13 @@ public class CenterPoint : MonoBehaviour
             if(cumulativeTime / colorLerpPeriod >= 1)
             {
                 blackFlag = false;
-                GamePlayManager.OnGameOver();
             }
         }
+    }
+
+    public void FinalGameOver()
+    {
+        GamePlayManager.OnGameOver();
     }
 
     public void AddEstimateColorBallNum()

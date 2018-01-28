@@ -57,7 +57,6 @@ public class GamePlayManager : MonoBehaviour {
         OnGameStart -= StartGame;
         OnGameOver -= EndGame;
         OnBackToMainMenu -= BackToMainMenu;
-
     }
 
     void Start()

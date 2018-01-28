@@ -92,25 +92,25 @@ public class GeneralTable
         switch(typeValue)
         {
             case Type.Red:
-                resultColor = Color.red;
+                resultColor = new Color(0.725f,0,0) ;
                 break;
             case Type.Blue:
-                resultColor = Color.blue;
+                resultColor = new Color(0.098f, 0.263f, 0.871f);
                 break;
             case Type.Yellow:
-                resultColor = Color.yellow;
+                resultColor = new Color(0.988f, 0.937f, 0.196f);
                 break;
             case Type.Purple:
-                resultColor = new Color(1, 0, 1);
+                resultColor = new Color(0.498f, 0.176f, 0.651f);
                 break;
             case Type.Green:
-                resultColor = Color.green;
+                resultColor = new Color(0.067f, 0.769f, 0.129f);
                 break;
             case Type.Orange:
-                resultColor = new Color(1, 0.6f, 0);
+                resultColor = new Color(0.957f, 0.341f, 0.098f);
                 break;
             case Type.White:
-                resultColor = Color.white;
+                resultColor = Color.black;
                 break;
             default:
                 break;

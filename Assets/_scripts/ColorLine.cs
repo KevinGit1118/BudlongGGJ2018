@@ -7,6 +7,11 @@ public class ColorLine : MonoBehaviour
     public MeshRenderer colorLineRenderer;
     public GeneralTable.Type colorType = GeneralTable.Type.White;
 
+    public void Start()
+    {
+        colorLineRenderer.material.color = GeneralTable.GetColor(colorType);        
+    }
+
     public void AddType(GeneralTable.Type type)
     {
         colorType = GeneralTable.Combine(type, colorType);

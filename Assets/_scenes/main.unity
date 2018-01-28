@@ -2947,6 +2947,24 @@ MonoBehaviour:
   estimateColorBallNum: 0
   currentColorBallNum: 0
   failFlag: 0
+  centerPointAnimator: {fileID: 1982994472}
+--- !u!95 &1982994472
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1982994469}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 24a28722c1db2094e8faec3e52cf5d39, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &2014323830 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114204721820281750, guid: f1df4ffc25c36c24cbd6d83adc267899,

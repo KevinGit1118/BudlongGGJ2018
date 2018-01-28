@@ -22,6 +22,8 @@ public class CenterPoint : MonoBehaviour
     public int currentColorBallNum = 0;
     public bool failFlag = false;
 
+    public Animator centerPointAnimator;
+
     void Awake()
     {
         targetTypeQueue = new Queue<GeneralTable.Type>();
@@ -92,6 +94,7 @@ public class CenterPoint : MonoBehaviour
             if (failFlag)
             {
                 blackFlag = true;
+                centerPointAnimator.Play("Anim_Explode");
             }
             else
             {

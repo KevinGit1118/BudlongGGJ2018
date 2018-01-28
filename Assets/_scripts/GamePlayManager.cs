@@ -95,6 +95,7 @@ public class GamePlayManager : MonoBehaviour {
             //time
             if (timer > timeTable[curStage])
             {
+                EnableTimer = false;
                 foreach (Player p in players)
                 {
                     if(p.isOn)
@@ -108,11 +109,17 @@ public class GamePlayManager : MonoBehaviour {
         }
     }
 
+    public void ResetTimer()
+    {
+        EnableTimer = true;
+        timer = 0;
+    }
+
     public float GetRestTime()
     {
         if(timeTable.Count == 0)
             return 0;
-        return timeTable[curStage] - timer;
+        return Mathf.Max(timeTable[curStage] - timer, 0);
     }
 
 

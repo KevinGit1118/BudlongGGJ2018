@@ -102,6 +102,7 @@ public class CenterPoint : MonoBehaviour
 
         if (currentColorBallNum == estimateColorBallNum)
         {
+            GamePlayManager.Instance.ResetTimer();
             if (failFlag)
             {
                 blackFlag = true;
@@ -110,8 +111,12 @@ public class CenterPoint : MonoBehaviour
             else
             {
                 currentPoint++;
-                targetTypeQueue.Dequeue();
-                targetTypeQueue.Enqueue(GeneralTable.GetRandomType());
+                GeneralTable.Type currentType = targetTypeQueue.Peek();
+                while(currentType == targetTypeQueue.Peek())
+                {
+                    targetTypeQueue.Dequeue();
+                    targetTypeQueue.Enqueue(GeneralTable.GetRandomType());
+                }
                 centerPointMeshRenderer.material.color = GeneralTable.GetColor(targetTypeQueue.Peek());
             }
             

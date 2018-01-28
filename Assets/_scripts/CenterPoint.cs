@@ -105,6 +105,7 @@ public class CenterPoint : MonoBehaviour
             GamePlayManager.Instance.ResetTimer();
             if (failFlag)
             {
+                GamePlayManager.Instance.StopTimer();
                 blackFlag = true;
                 centerPointAnimator.Play("Anim_Explode");
             }

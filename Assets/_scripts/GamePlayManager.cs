@@ -115,6 +115,11 @@ public class GamePlayManager : MonoBehaviour {
         timer = 0;
     }
 
+    public void StopTimer()
+    {
+        EnableTimer = false;
+    }
+
     public float GetRestTime()
     {
         if(timeTable.Count == 0)

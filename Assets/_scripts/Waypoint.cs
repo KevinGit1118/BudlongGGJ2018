@@ -7,6 +7,9 @@ public class Waypoint : MonoBehaviour {
     public ColorLine[] colorLines;
     public CenterPoint centerPoint;
 
+    public GeneralTable.Type myType = GeneralTable.Type.White;
+    public MeshRenderer waypointMeshRenderer;
+
     public int nextWaypointIndex = 0;
 
     public ColorLine colorLine;
@@ -51,6 +54,8 @@ public class Waypoint : MonoBehaviour {
 
     public void EnType(GeneralTable.Type type)
     {
+        myType = GeneralTable.Combine(myType, type);
+        waypointMeshRenderer.material.color = GeneralTable.GetColor(myType);
         if (colorLine)
         {
             colorLine.AddType(type);
@@ -63,7 +68,9 @@ public class Waypoint : MonoBehaviour {
 
     public void DeType(GeneralTable.Type type)
     {
-        if(colorLine)
+        myType = GeneralTable.Remove(myType, type);
+        waypointMeshRenderer.material.color = GeneralTable.GetColor(myType);
+        if (colorLine)
         {
             colorLine.RemoveType(type);
         }

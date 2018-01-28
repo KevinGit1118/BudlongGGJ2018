@@ -130,7 +130,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4675942903203296, guid: f1df4ffc25c36c24cbd6d83adc267899, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 6.61
+      value: 6.79
       objectReference: {fileID: 0}
     - target: {fileID: 4675942903203296, guid: f1df4ffc25c36c24cbd6d83adc267899, type: 2}
       propertyPath: m_LocalRotation.x
@@ -838,7 +838,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4268921199120792, guid: 2b59ed9d978044ffdae54173c4499d28, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4268921199120792, guid: 2b59ed9d978044ffdae54173c4499d28, type: 2}
       propertyPath: m_LocalPosition.z
@@ -880,6 +880,10 @@ Prefab:
       propertyPath: m_Name
       value: player1v2
       objectReference: {fileID: 0}
+    - target: {fileID: 4535912152290794, guid: 2b59ed9d978044ffdae54173c4499d28, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b59ed9d978044ffdae54173c4499d28, type: 2}
   m_IsPrefabParent: 0
@@ -918,6 +922,7 @@ MonoBehaviour:
   startWaypoint: {fileID: 1336542223}
   playerMeshRenderer: {fileID: 597338260}
   colorLine: {fileID: 324343056}
+  ps: {fileID: 0}
   isOn: 1
 --- !u!1001 &603038616
 Prefab:
@@ -1989,7 +1994,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4268921199120792, guid: 2b59ed9d978044ffdae54173c4499d28, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4268921199120792, guid: 2b59ed9d978044ffdae54173c4499d28, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2069,6 +2074,7 @@ MonoBehaviour:
   startWaypoint: {fileID: 2020707428}
   playerMeshRenderer: {fileID: 1547809965}
   colorLine: {fileID: 411335373}
+  ps: {fileID: 0}
   isOn: 1
 --- !u!114 &1578045260 stripped
 MonoBehaviour:
@@ -2100,7 +2106,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4268921199120792, guid: 2b59ed9d978044ffdae54173c4499d28, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4268921199120792, guid: 2b59ed9d978044ffdae54173c4499d28, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2180,6 +2186,7 @@ MonoBehaviour:
   startWaypoint: {fileID: 255186395}
   playerMeshRenderer: {fileID: 1969346741}
   colorLine: {fileID: 2083724912}
+  ps: {fileID: 0}
   isOn: 1
 --- !u!1001 &1982994467
 Prefab:

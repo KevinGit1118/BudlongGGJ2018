@@ -21,6 +21,7 @@ public class Player : MonoBehaviour {
     public MeshRenderer playerMeshRenderer;
 
     public ColorLine colorLine;
+    public ParticleSystem ps;
 
     [HideInInspector]
     public bool isOn = true;
@@ -74,8 +75,15 @@ public class Player : MonoBehaviour {
 
     public void FireColorBall()
     {
+        if(ps)
+        {
+            ps.Clear();
+            ps.startColor = GeneralTable.GetColor(type);
+            ps.Play();
+        }
+
         GameObject colorballGO = Instantiate(colorBallRef);
-        colorballGO.transform.position = this.transform.position;
+        colorballGO.transform.position = new Vector3(this.transform.position.x, 1, this.transform.position.z);
         colorballGO.GetComponent<ColorBall>().type = type;
         colorballGO.GetComponent<ColorBall>().BallColor = GeneralTable.GetColor(type);
         colorballGO.GetComponent<ColorBall>().nextWaypoint = startWaypoint;

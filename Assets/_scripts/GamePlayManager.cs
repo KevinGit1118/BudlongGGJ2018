@@ -48,6 +48,7 @@ public class GamePlayManager : MonoBehaviour {
     private bool EnableTimer = false;
     void Awake()
     {
+        Screen.SetResolution(768, 768, false);
         OnGameStart += StartGame;
         OnGameOver += EndGame;
         OnBackToMainMenu += BackToMainMenu;

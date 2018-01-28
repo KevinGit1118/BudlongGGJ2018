@@ -67,11 +67,11 @@ public class PlayersData : MonoBehaviour {
         int result = 0;
         if(a.score > b.score)
         {
-            result = 1;
+            result = -1;
         }
         else if(a.score < b.score)
         {
-            result = -1;
+            result = 1;
         }
         return result;
     }

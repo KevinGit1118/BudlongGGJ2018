@@ -17,7 +17,6 @@ public class UIManager : MonoBehaviour {
 
     public InputField userName = null;
     public Text userScroe = null;
-    public CenterPoint centerPoint = null;
 
 
     void Awake()
@@ -76,7 +75,7 @@ public class UIManager : MonoBehaviour {
         MainMenuPanel.SetActive(true);
         InGamePanel.SetActive(false);
         //update leaderboard player data here
-        PlayersData.Instance.UpdateLeaderBoard(userName.text, centerPoint.currentPoint);
+        PlayersData.Instance.UpdateLeaderBoard(userName.text, GamePlayManager.Instance.centerPoint.currentPoint);
         UpdateLeaderBoard();
     }
 

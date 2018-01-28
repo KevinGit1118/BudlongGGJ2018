@@ -54,15 +54,22 @@ public class ColorBall : MonoBehaviour {
             tempPos = this.transform.position;
             tempNextPos = nextWaypoint.transform.position;
             tempDirection = tempNextPos - tempPos;
+            tempDirection.y = 0;
             tempDirection.Normalize();
             // speed
             tempDirection *= currentSpeed;
-            this.transform.position = new Vector3(tempPos.x + (tempDirection.x * Time.deltaTime), 0, tempPos.z + (tempDirection.z * Time.deltaTime));
+            this.transform.position = new Vector3(tempPos.x + (tempDirection.x * Time.deltaTime), tempPos.y, tempPos.z + (tempDirection.z * Time.deltaTime));
             tempResultPos = this.transform.position;
 
-            if(((tempPos.x - tempNextPos.x) * (tempResultPos.x - tempNextPos.x)) <= 0 && ((tempPos.z - tempNextPos.z) * (tempResultPos.z - tempNextPos.z)) <= 0)
+            /*Debug.Log("====T " + tempPos.ToString());
+            Debug.Log("====N " + tempNextPos.ToString());
+            Debug.Log("====R " + tempResultPos.ToString());
+            Debug.Log("^^ 1: " + ((tempPos.x - tempNextPos.x) * (tempResultPos.x - tempNextPos.x)));
+            Debug.Log("^^ 2: " + ((tempPos.z - tempNextPos.z) * (tempResultPos.z - tempNextPos.z)));*/
+
+            if (((tempPos.x - tempNextPos.x) * (tempResultPos.x - tempNextPos.x)) <= 0 && ((tempPos.z - tempNextPos.z) * (tempResultPos.z - tempNextPos.z)) <= 0)
             {
-                this.transform.position = tempNextPos;
+                this.transform.position = new Vector3(tempNextPos.x, this.transform.position.y, tempNextPos.z);
                 if(nextWaypoint.GetNextWaypoint())
                 {
                     nextWaypoint = nextWaypoint.GetNextWaypoint();
@@ -79,10 +86,11 @@ public class ColorBall : MonoBehaviour {
             tempPos = this.transform.position;
             tempNextPos = nextCenterPoint.transform.position;
             tempDirection = tempNextPos - tempPos;
+            tempDirection.y = 0;
             tempDirection.Normalize();
             // speed
             tempDirection *= currentSpeed;
-            this.transform.position = new Vector3(tempPos.x + (tempDirection.x * Time.deltaTime), 0, tempPos.z + (tempDirection.z * Time.deltaTime));
+            this.transform.position = new Vector3(tempPos.x + (tempDirection.x * Time.deltaTime), this.transform.position.y, tempPos.z + (tempDirection.z * Time.deltaTime));
             tempResultPos = this.transform.position;
 
             // to the center, just destroy
@@ -103,7 +111,6 @@ public class ColorBall : MonoBehaviour {
         ColorBall tempColorBall = other.gameObject.GetComponent<ColorBall>();
         if(tempColorBall)
         {
-            Debug.Log("==== " + tempColorBall.type);
             // Don't case equal for now lol
             if((int)type > (int)tempColorBall.type)
             {

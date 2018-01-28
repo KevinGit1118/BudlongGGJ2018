@@ -10,7 +10,6 @@ public class ColorLine : MonoBehaviour
     public void AddType(GeneralTable.Type type)
     {
         colorType = GeneralTable.Combine(type, colorType);
-        Debug.Log("## ColorLine: " + colorType.ToString());
         colorLineRenderer.material.color = GeneralTable.GetColor(colorType);
     }
 

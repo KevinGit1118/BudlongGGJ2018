@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33944246044729336}
   - component: {fileID: 64647053243448248}
   - component: {fileID: 23116787219238884}
+  - component: {fileID: 95305852944512240}
+  - component: {fileID: 114622920631345620}
   m_Layer: 0
   m_Name: centerPoint_v2
   m_TagString: Untagged
@@ -54,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1012562818681748}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.5, z: -16.614}
+  m_LocalPosition: {x: 0, y: 1.51, z: 1.31}
   m_LocalScale: {x: 3.6230137, y: 3.623015, z: 3.623015}
   m_Children:
   - {fileID: 4543109053318598}
@@ -69,7 +71,7 @@ Transform:
   m_GameObject: {fileID: 1791247303143836}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.05, y: 1.05, z: 1}
   m_Children: []
   m_Father: {fileID: 4073850498288930}
   m_RootOrder: 0
@@ -177,10 +179,47 @@ MeshCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1012562818681748}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &95305852944512240
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1012562818681748}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 24a28722c1db2094e8faec3e52cf5d39, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114622920631345620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1012562818681748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db6b3a3581ba0942984ab9f69db0860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentPoint: 0
+  centerPointMeshRenderer: {fileID: 23116787219238884}
+  blackFlag: 0
+  colorLerpPeriod: 1
+  estimateColorBallNum: 0
+  currentColorBallNum: 0
+  failFlag: 0
+  fixedScale: 0
+  centerPointAnimator: {fileID: 95305852944512240}

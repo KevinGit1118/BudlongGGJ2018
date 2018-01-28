@@ -91,6 +91,22 @@ public class UIManager : MonoBehaviour {
         GamePlayManager.OnBackToMainMenu();
     }
 
+    public void BtnResetPlayerData()
+    {
+        // PlayerPrefs.DeleteAll();
+        for (int i = 0; i < 10; ++i)
+        {
+            PlayerPrefs.SetString("name" + i, "");
+            PlayerPrefs.SetInt("score" + i,0);
+            PlayersData.LeaderLine temp = new PlayersData.LeaderLine();
+            temp.name = "";
+            temp.score = 0;
+            PlayersData.Instance.leaderBoard[i] = temp;
+        }
+        UpdateLeaderBoard();
+
+    }
+
 
     public void GenerateLeaderBoader()
     {
@@ -108,7 +124,13 @@ public class UIManager : MonoBehaviour {
         {
             string lName =  PlayersData.Instance.leaderBoard[i].name;
             int lScore = PlayersData.Instance.leaderBoard[i].score;
+            if (string.IsNullOrEmpty(lName) && lScore == 0)
+            {
+                LeaderboardEntries[i].GetComponentInChildren<Text>().text = "";
+                continue;
+            }
             LeaderboardEntries[i].GetComponentInChildren<Text>().text = lName + " : " + lScore;
+
         }
 
     }

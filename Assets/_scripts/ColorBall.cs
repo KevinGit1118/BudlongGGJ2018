@@ -115,8 +115,9 @@ public class ColorBall : MonoBehaviour {
             if((int)type > (int)tempColorBall.type)
             {
                 type = GeneralTable.Combine(type, tempColorBall.type);
-                Debug.Log("---- new type " + type + ", " + GeneralTable.GetColor(type).ToString());
                 BallColor = GeneralTable.GetColor(type);
+
+                GamePlayManager.Instance.centerPoint.RemoveEstimateColorBallNum();
             }
             else
             {

@@ -18,6 +18,10 @@ public class CenterPoint : MonoBehaviour
 
     private float cumulativeTime = 0f;
 
+    public int estimateColorBallNum = 0;
+    public int currentColorBallNum = 0;
+    public bool failFlag = false;
+
     void Awake()
     {
         targetTypeQueue = new Queue<GeneralTable.Type>();
@@ -34,6 +38,10 @@ public class CenterPoint : MonoBehaviour
     {
         blackFlag = false;
         cumulativeTime = 0;
+
+        estimateColorBallNum = 0;
+        currentColorBallNum = 0;
+        failFlag = false;
 
         targetTypeQueue.Clear();
         for (int i = 0; i < countMax; ++i)
@@ -55,25 +63,46 @@ public class CenterPoint : MonoBehaviour
                 GamePlayManager.OnGameOver();
             }
         }
-        
+    }
+
+    public void AddEstimateColorBallNum()
+    {
+        estimateColorBallNum++;
+    }
+
+    public void RemoveEstimateColorBallNum()
+    {
+        estimateColorBallNum--;
     }
 
     // if Color match queue color, add one point, and create another color into queue.
     public bool match(GeneralTable.Type typeValue)
     {
+        currentColorBallNum++;
+
         bool result = false;
-        if(typeValue.Equals(targetTypeQueue.Peek()))
+        if(!typeValue.Equals(targetTypeQueue.Peek()))
         {
-            currentPoint++;
-            targetTypeQueue.Dequeue();
-            targetTypeQueue.Enqueue(GeneralTable.GetRandomType());
-            centerPointMeshRenderer.material.color = GeneralTable.GetColor(targetTypeQueue.Peek());
+            failFlag = true;
             result = true;
         }
-        else
+
+        if (currentColorBallNum == estimateColorBallNum)
         {
-            blackFlag = true;
+            if (failFlag)
+            {
+                blackFlag = true;
+            }
+            else
+            {
+                currentPoint++;
+                targetTypeQueue.Dequeue();
+                targetTypeQueue.Enqueue(GeneralTable.GetRandomType());
+                centerPointMeshRenderer.material.color = GeneralTable.GetColor(targetTypeQueue.Peek());
+            }
+            
         }
+
         return result;
     }
 }

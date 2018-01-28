@@ -118,7 +118,6 @@ public class Player : MonoBehaviour {
 
     public void EnType()
     {
-        Debug.Log("## Player: " + type.ToString());
         colorLine.AddType(type);
         Waypoint current = startWaypoint;
         while (current)

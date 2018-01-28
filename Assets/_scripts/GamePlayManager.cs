@@ -44,6 +44,7 @@ public class GamePlayManager : MonoBehaviour {
     public static int CurStage { get { return curStage; } }
 
     public Player[] players = new Player[3];
+    public CenterPoint centerPoint;
     private bool EnableTimer = false;
     void Awake()
     {
@@ -98,7 +99,10 @@ public class GamePlayManager : MonoBehaviour {
                 foreach (Player p in players)
                 {
                     if(p.isOn)
+                    {
                         p.FireColorBall();
+                        centerPoint.AddEstimateColorBallNum();
+                    }
                 }
                 timer = 0;
             }

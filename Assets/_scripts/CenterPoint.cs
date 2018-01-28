@@ -43,7 +43,7 @@ public class CenterPoint : MonoBehaviour
 
     public void Reset()
     {
-        this.transform.localScale = new Vector3(fixedScale, fixedScale, fixedScale);
+        currentPoint = 0;
 
         blackFlag = false;
         cumulativeTime = 0;
@@ -58,6 +58,8 @@ public class CenterPoint : MonoBehaviour
             targetTypeQueue.Enqueue(GeneralTable.GetRandomType());
         }
         centerPointMeshRenderer.material.color = GeneralTable.GetColor(targetTypeQueue.Peek());
+
+        this.transform.localScale = new Vector3(fixedScale, fixedScale, fixedScale);
     }
 
     private void Update()

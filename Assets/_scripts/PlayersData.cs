@@ -38,6 +38,10 @@ public class PlayersData : MonoBehaviour {
             LeaderLine temp = new LeaderLine();
             temp.name = PlayerPrefs.GetString("name" + i);
             temp.score = PlayerPrefs.GetInt("score" + i);
+            if (temp.name.Equals(""))
+            {
+                temp.score = -1;
+            }
             leaderBoard.Add(temp);
         }
 

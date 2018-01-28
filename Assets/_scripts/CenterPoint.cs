@@ -12,6 +12,12 @@ public class CenterPoint : MonoBehaviour
 
     public MeshRenderer centerPointMeshRenderer;
 
+    public bool blackFlag = false;
+
+    public float colorLerpPeriod = 1f;
+
+    private float cumulativeTime = 0f;
+
     void Awake()
     {
         targetTypeQueue = new Queue<GeneralTable.Type>();
@@ -20,19 +26,41 @@ public class CenterPoint : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-		for(int i = 0; i < countMax; ++i)
+        Reset();
+    }
+
+    public void Reset()
+    {
+        blackFlag = false;
+        cumulativeTime = 0;
+
+        targetTypeQueue.Clear();
+        for (int i = 0; i < countMax; ++i)
         {
             targetTypeQueue.Enqueue(GeneralTable.GetRandomType());
         }
-
         centerPointMeshRenderer.material.color = GeneralTable.GetColor(targetTypeQueue.Peek());
+    }
+
+    private void Update()
+    {
+        if(blackFlag)
+        {
+            cumulativeTime += Time.deltaTime;
+            centerPointMeshRenderer.material.color = Color.Lerp(centerPointMeshRenderer.material.color, GeneralTable.GetColor(GeneralTable.Type.White), cumulativeTime / colorLerpPeriod);
+            if(cumulativeTime / colorLerpPeriod >= 1)
+            {
+                blackFlag = false;
+                GamePlayManager.OnGameOver();
+            }
+        }
+        
     }
 
     // if Color match queue color, add one point, and create another color into queue.
     public bool match(GeneralTable.Type typeValue)
     {
         bool result = false;
-        Debug.Log("@@ " + typeValue + " @@ " + targetTypeQueue.Peek() + " @@");
         if(typeValue.Equals(targetTypeQueue.Peek()))
         {
             currentPoint++;
@@ -43,7 +71,7 @@ public class CenterPoint : MonoBehaviour
         }
         else
         {
-            GamePlayManager.OnGameOver();
+            blackFlag = true;
         }
         return result;
     }

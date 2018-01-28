@@ -97,13 +97,22 @@ public class GamePlayManager : MonoBehaviour {
             if (timer > timeTable[curStage])
             {
                 EnableTimer = false;
+                int offCount = 0;
                 foreach (Player p in players)
                 {
-                    if(p.isOn)
+                    if (p.isOn)
                     {
                         p.FireColorBall();
                         centerPoint.AddEstimateColorBallNum();
                     }
+                    else
+                    {
+                        offCount++;
+                    }
+                }
+                if (offCount == players.Length)
+                {
+                    centerPoint.PerformFail();
                 }
                 timer = 0;
             }

@@ -111,9 +111,7 @@ public class CenterPoint : MonoBehaviour
             GamePlayManager.Instance.ResetTimer();
             if (failFlag)
             {
-                GamePlayManager.Instance.StopTimer();
-                blackFlag = true;
-                centerPointAnimator.Play("Anim_Explode");
+                PerformFail();
             }
             else
             {
@@ -131,5 +129,12 @@ public class CenterPoint : MonoBehaviour
         }
 
         return result;
+    }
+
+    public void PerformFail()
+    {
+        GamePlayManager.Instance.StopTimer();
+        blackFlag = true;
+        centerPointAnimator.Play("Anim_Explode");
     }
 }
